@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap");
+
+:root {
+  font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0b1021;
+  background-color: #0b1021;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(circle at top, #1f4d99, #0b1021 60%);
+  color: inherit;
+}
+
+.game-wrapper {
+  width: min(1100px, 100%);
+  background: rgba(10, 14, 26, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ui-bar {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(2, 0.6fr) 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(120deg, #ff6b6b, #ffa94d);
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.info {
+  text-align: center;
+}
+
+.label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+}
+
+.value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#startBtn {
+  background: #111927;
+  color: #fff;
+}
+
+#resetBtn {
+  background: #ffffff;
+  color: #111927;
+}
+
+#resetBtn.ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.status-panel {
+  padding: 1rem 2rem 0.2rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.status-panel p {
+  line-height: 1.5;
+}
+
+.court-container {
+  position: relative;
+  padding: 1.5rem 2rem 2rem;
+  background: linear-gradient(160deg, #124365, #091527 70%);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #0e1f33 15%, #1b722f 15%, #1b722f 85%, #0e1f33 85%);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.hint {
+  margin-top: 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.hint h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: #fff;
+}
+
+.hint ul {
+  list-style: disc;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hint li {
+  line-height: 1.6;
+}
+
+.credit {
+  padding: 1.2rem 2rem 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .ui-bar {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .court-container {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+  }
+
+  canvas {
+    height: auto;
+  }
+}
+
